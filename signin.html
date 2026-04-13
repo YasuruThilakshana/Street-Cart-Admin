@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Admin Sign In</title>
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <style>
+      .login-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f4f5f7;
+      }
+      .login-card {
+        width: 100%;
+        max-width: 420px;
+        padding: 32px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+      .login-card h4 {
+        margin-bottom: 24px;
+        font-weight: 700;
+      }
+      #signinError {
+        display: none;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="login-card">
+        <h4 class="text-center">Admin Sign In</h4>
+        <div id="signinError" class="alert alert-danger"></div>
+        <form id="signinForm" class="pt-2">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input id="email" type="email" class="form-control" placeholder="Enter email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" class="form-control" placeholder="Password" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mt-4">Sign In</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="js/auth.js"></script>
+  </body>
+</html>
