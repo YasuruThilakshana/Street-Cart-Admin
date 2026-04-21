@@ -241,19 +241,6 @@
                 </ul>
               </div>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-                <span class="menu-title">Charts</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
-              </a>
-              <div class="collapse" id="charts">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a>
-                  </li>
-                </ul>
-              </div>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                 <span class="menu-title">Orders Management</span>
@@ -262,12 +249,12 @@
               <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/paidorders.html">Pending Orders</a>
+                    <a class="nav-link" href="pages/charts/paidorders.html">Bought Orders</a>
                   </li>
                 </ul>
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/chartjs.html">Complete  Orders</a>
+                    <a class="nav-link" href="pages/charts/chartjs.html">Paid Orders</a>
                   </li>
                 </ul>
               </div>
@@ -323,11 +310,11 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Bought Orders</h3>
+              <h3 class="page-title"> Paid Orders</h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#">Order Management</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Bought Orders</li>
+                  <li class="breadcrumb-item active" aria-current="page">Paid Orders</li>
                 </ol>
               </nav>
             </div>
@@ -335,39 +322,14 @@
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Bought Orders</h4>
-                    <!-- list bought orders  -->
-
+                    <h4 class="card-title">Paid Orders</h4>
+                    <!-- list paid orders  -->
 
                     <div id="ordersContainer" class="orders-container">
                       <div class="text-center text-muted py-4">
                         <i class="fas fa-spinner fa-spin"></i> Loading orders...
                       </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                    
                 </div>
               </div>
@@ -397,7 +359,7 @@
 
       <script type="module" src="../../js/auth.js"></script>
       <script type="module" src="../../js/loaduser.js"></script>
-      <script type="module" src="../../js/loadboughtorders.js"></script>
+      <script type="module" src="../../js/loadpaidorders.js"></script>
     <!-- inject:js -->
     <script src="../../assets/js/off-canvas.js"></script>
     <script src="../../assets/js/misc.js"></script>
