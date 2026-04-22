@@ -48,7 +48,7 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src="assets/images/faces/face1.jpg" alt="image">
+                  <img src="assets/images/faces/face1.jpg" alt="profile" width="32" height="32" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
@@ -263,51 +263,7 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-                <span class="menu-title">Tables</span>
-                <i class="mdi mdi-table-large menu-icon"></i>
-              </a>
-              <div class="collapse" id="tables">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <span class="menu-title">User Pages</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-lock menu-icon"></i>
-              </a>
-              <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/login.html"> Login </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/register.html"> Register </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="docs/documentation.html" target="_blank">
-                <span class="menu-title">Documentation</span>
-                <i class="mdi mdi-file-document-box menu-icon"></i>
-              </a>
-            </li>
+            
           </ul>
         </nav>
         <!-- partial -->
@@ -332,10 +288,10 @@
                 <div class="card bg-gradient-danger card-img-holder text-white">
                   <div class="card-body">
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Weekly Sales <i class="mdi mdi-chart-line mdi-24px float-end"></i>
+                    <h4 class="font-weight-normal mb-3">Total Sales <i class="mdi mdi-chart-line mdi-24px float-end"></i>
                     </h4>
-                    <h2 class="mb-5">$ 15,0000</h2>
-                    <h6 class="card-text">Increased by 60%</h6>
+                    <h2 class="mb-5" id="totalSalesDisplay">Loading...</h2>
+                    <!-- <h6 class="card-text">Increased by 60%</h6> -->
                   </div>
                 </div>
               </div>
@@ -343,10 +299,10 @@
                 <div class="card bg-gradient-info card-img-holder text-white">
                   <div class="card-body">
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Weekly Orders <i class="mdi mdi-bookmark-outline mdi-24px float-end"></i>
+                    <h4 class="font-weight-normal mb-3">Total Orders <i class="mdi mdi-bookmark-outline mdi-24px float-end"></i>
                     </h4>
-                    <h2 class="mb-5">45,6334</h2>
-                    <h6 class="card-text">Decreased by 10%</h6>
+                    <h2 class="mb-5" id="totalOrdersDisplay">Loading...</h2>
+                    <!-- <h6 class="card-text">Decreased by 10%</h6> -->
                   </div>
                 </div>
               </div>
@@ -354,10 +310,10 @@
                 <div class="card bg-gradient-success card-img-holder text-white">
                   <div class="card-body">
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">Visitors Online <i class="mdi mdi-diamond mdi-24px float-end"></i>
+                    <h4 class="font-weight-normal mb-3"> Platform users <i class="mdi mdi-diamond mdi-24px float-end"></i>
                     </h4>
-                    <h2 class="mb-5">95,5741</h2>
-                    <h6 class="card-text">Increased by 5%</h6>
+                    <h2 class="mb-5" id="userCountDisplay">Loading...</h2>
+                    <!-- <h6 class="card-text">Increased by 5%</h6> -->
                   </div>
                 </div>
               </div>
@@ -367,21 +323,21 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="clearfix">
-                      <h4 class="card-title float-start">Visit And Sales Statistics</h4>
-                      <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-end"></div>
+                      <h4 class="card-title float-start">High Demand Category</h4>
+                      <div id="high-demand-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-end"></div>
                     </div>
-                    <canvas id="visit-sale-chart" class="mt-4"></canvas>
+                    <canvas id="high-demand-chart" class="mt-4"></canvas>
                   </div>
                 </div>
               </div>
               <div class="col-md-5 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Traffic Sources</h4>
+                    <h4 class="card-title">Most Product Sold Vendor</h4>
                     <div class="doughnutjs-wrapper d-flex justify-content-center">
-                      <canvas id="traffic-chart"></canvas>
+                      <canvas id="vendor-sales-chart"></canvas>
                     </div>
-                    <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+                    <div id="vendor-sales-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
                   </div>
                 </div>
               </div>
@@ -454,6 +410,260 @@
     <script type="module" src="js/auth.js"></script>
     <!-- load users from firebase --- IGNORE --- -->
     <script type="module" src="js/loaduser.js"></script>
+    <script type="module">
+      import { db } from "/configaration/firebaseConfig.js";
+      import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+
+      async function loadUserCount() {
+        try {
+          const querySnapshot = await getDocs(collection(db, "users"));
+          const userCount = querySnapshot.size;
+          document.getElementById("userCountDisplay").innerText = userCount;
+        } catch (error) {
+          console.error("Error loading user count:", error);
+          document.getElementById("userCountDisplay").innerText = "0";
+        }
+      }
+
+      async function loadTotalSalesAndOrders() {
+        try {
+          const ordersSnapshot = await getDocs(collection(db, "orders"));
+          let totalSales = 0;
+          let totalOrdersCount = 0;
+
+          ordersSnapshot.forEach((doc) => {
+            const data = doc.data();
+            const orderItems = data.orderItems || [];
+            
+            orderItems.forEach((item) => {
+              // Check if individual item is paid
+              if (item.productstatus && item.productstatus.toLowerCase() === "paid") {
+                const quantity = item.quantity || 0;
+                const unitPrice = item.unitprice || 0;
+                totalSales += quantity * unitPrice;
+                totalOrdersCount++;
+              }
+            });
+          });
+
+          // Display total sales with currency format
+          const salesElement = document.getElementById("totalSalesDisplay");
+          if (salesElement) {
+            salesElement.innerText = "Rs. " + totalSales.toFixed(2);
+          }
+
+          // Display total orders count
+          const ordersElement = document.getElementById("totalOrdersDisplay");
+          if (ordersElement) {
+            ordersElement.innerText = totalOrdersCount;
+          }
+        } catch (error) {
+          console.error("Error loading sales and orders:", error);
+          document.getElementById("totalSalesDisplay").innerText = "Rs. 0";
+          document.getElementById("totalOrdersDisplay").innerText = "0";
+        }
+      }
+
+      async function loadHighDemandCategory() {
+        try {
+          // Fetch all products
+          let productSnapshot = null;
+          const collectionsToTry = ["products", "product"];
+          
+          for (const collectionName of collectionsToTry) {
+            const snapshot = await getDocs(collection(db, collectionName));
+            if (!snapshot.empty) {
+              productSnapshot = snapshot;
+              break;
+            }
+          }
+
+          if (!productSnapshot || productSnapshot.empty) {
+            console.warn("No products found");
+            return;
+          }
+
+          // Count products by category
+          const categoryCount = {};
+          const categoryNames = {};
+
+          for (const doc of productSnapshot.docs) {
+            const data = doc.data();
+            const categoryId = data.categoryId;
+
+            if (categoryId) {
+              categoryCount[categoryId] = (categoryCount[categoryId] || 0) + 1;
+              
+              // Get category name if not already fetched
+              if (!categoryNames[categoryId]) {
+                try {
+                  const categoryDoc = await getDocs(collection(db, "categories"));
+                  for (const catDoc of categoryDoc.docs) {
+                    const catData = catDoc.data();
+                    if (catData.categoryId === categoryId) {
+                      categoryNames[categoryId] = catData.name || categoryId;
+                      break;
+                    }
+                  }
+                } catch (error) {
+                  categoryNames[categoryId] = categoryId;
+                }
+              }
+            }
+          }
+
+          // Prepare chart data
+          const labels = Object.keys(categoryCount).map(id => categoryNames[id] || id);
+          const data = Object.values(categoryCount);
+          
+          // Sort by count (descending)
+          const combined = labels.map((label, index) => ({ label, count: data[index] }))
+            .sort((a, b) => b.count - a.count);
+
+          const sortedLabels = combined.map(item => item.label);
+          const sortedData = combined.map(item => item.count);
+
+          // Create bar chart
+          const ctx = document.getElementById("high-demand-chart");
+          if (ctx) {
+            if (window.highDemandChart) {
+              window.highDemandChart.destroy();
+            }
+            
+            window.highDemandChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: sortedLabels,
+                datasets: [{
+                  label: 'Product Count',
+                  data: sortedData,
+                  backgroundColor: '#29cc39',
+                  borderColor: '#1a7a1f',
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                  legend: {
+                    display: true,
+                    position: 'top'
+                  }
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    ticks: {
+                      stepSize: 1
+                    }
+                  }
+                }
+              }
+            });
+          }
+        } catch (error) {
+          console.error("Error loading high demand category:", error);
+        }
+      }
+
+      async function loadMostProductSoldVendor() {
+        try {
+          const ordersSnapshot = await getDocs(collection(db, "orders"));
+          
+          if (ordersSnapshot.empty) {
+            console.warn("No orders found");
+            return;
+          }
+
+          // Count products sold by vendor/seller
+          const vendorSales = {};
+          const vendorNames = {};
+
+          // Get all sellers for name mapping
+          const sellersSnapshot = await getDocs(collection(db, "sellers"));
+          const sellerMap = {};
+          sellersSnapshot.docs.forEach((doc) => {
+            const data = doc.data();
+            sellerMap[data.sellerId] = data.shopName || data.sellerId;
+          });
+
+          // Process orders to sum products by vendor
+          ordersSnapshot.forEach((orderDoc) => {
+            const orderData = orderDoc.data();
+            const orderItems = orderData.orderItems || [];
+
+            orderItems.forEach((item) => {
+              // Count only paid products
+              if (item.productstatus && item.productstatus.toLowerCase() === "paid") {
+                const sellerId = item.sellerId;
+                const quantity = item.quantity || 0;
+
+                if (sellerId) {
+                  vendorSales[sellerId] = (vendorSales[sellerId] || 0) + quantity;
+                  vendorNames[sellerId] = sellerMap[sellerId] || sellerId;
+                }
+              }
+            });
+          });
+
+          // Prepare chart data
+          const labels = Object.keys(vendorSales).map(id => vendorNames[id] || id);
+          const data = Object.values(vendorSales);
+
+          // Sort by quantity (descending)
+          const combined = labels.map((label, index) => ({ label, quantity: data[index] }))
+            .sort((a, b) => b.quantity - a.quantity);
+
+          const sortedLabels = combined.map(item => item.label);
+          const sortedData = combined.map(item => item.quantity);
+
+          // Create doughnut chart
+          const ctx = document.getElementById("vendor-sales-chart");
+          if (ctx) {
+            if (window.vendorSalesChart) {
+              window.vendorSalesChart.destroy();
+            }
+
+            // Generate colors for each vendor
+            const colors = [
+              '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+              '#FF9F40', '#FF6384', '#C9CBCF', '#4BC0C0', '#FF6384'
+            ];
+
+            window.vendorSalesChart = new Chart(ctx, {
+              type: 'doughnut',
+              data: {
+                labels: sortedLabels,
+                datasets: [{
+                  data: sortedData,
+                  backgroundColor: colors.slice(0, sortedLabels.length),
+                  borderColor: '#fff',
+                  borderWidth: 2
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                  legend: {
+                    display: true,
+                    position: 'bottom'
+                  }
+                }
+              }
+            });
+          }
+        } catch (error) {
+          console.error("Error loading vendor sales:", error);
+        }
+      }
+
+      loadUserCount();
+      loadTotalSalesAndOrders();
+      loadHighDemandCategory();
+      loadMostProductSoldVendor();
+    </script>
    
   </body>
 </html>
