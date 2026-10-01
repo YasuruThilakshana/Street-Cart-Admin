@@ -1,5 +1,5 @@
 
-import { auth, db, storage } from "/configaration/firebaseConfig.js";
+import { auth, db, storage } from "../configaration/firebaseConfig.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 import { ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-storage.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
